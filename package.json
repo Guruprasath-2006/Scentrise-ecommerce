@@ -1,0 +1,29 @@
+{
+  "name": "scentrise",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "build": "cd shared && npm run build && cd ../server && npm run build && cd ../client && npm run build",
+    "lint": "cd client && npm run lint",
+    "test": "cd server && npm run test",
+    "seed": "cd server && npm run seed",
+    "start": "cd server && npm run start"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.20",
+    "concurrently": "^8.2.2"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "react-helmet-async": "^2.0.5"
+  }
+}
